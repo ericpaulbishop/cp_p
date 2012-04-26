@@ -18,11 +18,12 @@ while [ $argnum -lt $# ] ; do
 
 	src=$(eval echo '$'$argnum)
 	
-	
-	arg_size=$(du -sb "$src"  2>/dev/null | awk '{ print $1"\n" }' )
-	if [ -n "$arg_size" ] ; then
-		total_size=$(( $total_size + $arg_size ))
+	if [ -e "$src" ] ; then
 		exists=1
+		arg_size=$(du -sb "$src"  2>/dev/null | awk '{ print $1"\n" }' )
+		if [ -n "$arg_size" ] ; then
+			total_size=$(( $total_size + $arg_size ))
+		fi
 	fi
 	argnum=$(( $argnum + 1 ))
 
