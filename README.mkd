@@ -1,0 +1,5 @@
+# cp_p : Unix cp, with a progress bar
+
+This is a bash script which does almost exactly the same as cp, except that it provides a progress bar.  Progress is provided with respect to the full operation, that is ALL files being copied.  
+
+The flags possible with cp aren't really supported, but it always copies recursively ( cp '-r' flag is set when run), so copying directories should work fine.  If someone wants to expand on this, to handle cp options properly, go right ahead...
